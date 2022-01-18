@@ -17,6 +17,9 @@ public class Main {
 		rectangle(square);
 //		Expected area of :50; got :100
 		
+		RectangleFactory rectangle2 = new RectangleFactory();
+		System.out.println(rectangle2.newRectangle(2, 3).getArea());
+		System.out.println(rectangle2.newSquare(5).getArea());
 	}
 
 	public static void rectangle(Rectangle rectangle) {
