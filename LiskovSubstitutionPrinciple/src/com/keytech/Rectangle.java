@@ -33,6 +33,14 @@ public class Rectangle {
 	public int getArea() {
 		return width * height;
 	}
+	
+	/*one way to solve this is to check whether the shape is a square 
+	 * and then do away with the square class.
+	 * Alternatively you can use factory pattern. 
+	*/
+	public boolean isSquare() {
+		return width == height;
+	}
 
 	@Override
 	public String toString() {
