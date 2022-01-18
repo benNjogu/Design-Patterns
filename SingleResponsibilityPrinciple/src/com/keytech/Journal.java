@@ -23,19 +23,4 @@ public class Journal {
 		return String.join(System.lineSeparator(), entries);
 	}
 
-	public void save(String filename) {
-		try (PrintStream out = new PrintStream(filename)) {
-			out.println(toString());
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void load(String filename) {
-
-	}
-
-	public void load(URL url) {
-
-	}
 }
