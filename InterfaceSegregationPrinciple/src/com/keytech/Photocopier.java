@@ -1,14 +1,9 @@
 package com.keytech;
 
-public class MultifunctionPrinter implements Multifunction{
+public class Photocopier implements Scanner, Printer{
 
 	@Override
 	public void print(Document document) {
-		
-	}
-
-	@Override
-	public void fax(Document document) {
 		
 	}
 
