@@ -24,7 +24,9 @@ public class Main {
 		System.out.println("-----------------------------------");
 		//Using the html builder
 		HtmlBuilder builder = new HtmlBuilder("ul");
-		builder.addChild("li", "Hello").addChild("li", "World");
+		builder
+		.addChild("li", "Hello")
+		.addChild("li", "World");
 		System.out.println(builder);
 		
 	}
