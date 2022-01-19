@@ -21,6 +21,12 @@ public class Main {
 		}
 		sb.append("</ul>");
 		System.out.println(sb.toString());
+		System.out.println("-----------------------------------");
+		//Using the html builder
+		HtmlBuilder builder = new HtmlBuilder("ul");
+		builder.addChild("li", "Hello");
+		builder.addChild("li", "World");
+		System.out.println(builder);
 		
 	}
 	
