@@ -4,22 +4,21 @@ class Point {
 
 	private double x, y;
 
-	public Point(double x, double y) {
+	private Point(double x, double y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
 
-}
+	public static class Factory {
 
-class PointFactory {
+		public static Point newCartesianPoint(double x, double y) {
+			return new Point(x, y);
+		}
 
-	public static Point newCartesianPoint(double x, double y) {
-		return new Point(x, y);
-	}
-
-	public static Point newPolarPoint(double rho, double theta) {
-		return new Point((rho * Math.cos(theta)), (rho * Math.sin(theta)));
+		public static Point newPolarPoint(double rho, double theta) {
+			return new Point((rho * Math.cos(theta)), (rho * Math.sin(theta)));
+		}
 	}
 }
 
@@ -30,13 +29,9 @@ public class Main {
 	 * creation of objects
 	 */
 	public static void main(String[] args) {
-
-		/*
-		 * With the factory class and the constructor public users now have two
-		 * different ways of creating the Points which is a great problem
-		 */
-		Point point = PointFactory.newCartesianPoint(2, 3);
-		Point point2 = new Point(2, 3);
+		
+		Point point =  Point.Factory.newCartesianPoint(3, 4);
+		point = Point.Factory.newPolarPoint(2, 3);
 
 	}
 
