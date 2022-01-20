@@ -1,32 +1,21 @@
 package com.keytech;
 
-//solution for the constructors
-enum CoordinateSystem {
-	CARTESIAN, POLAR
-}
-
 class Point {
 
 	private double x, y;
 
-	/*
-	 * @param a is x if cartesian and rho if polar 
-	 * @param b
-	 * */
-	public Point(double a, double b, CoordinateSystem cs) {
+	private Point(double x, double y) {
 		super();
-		switch (cs) {
-		case CARTESIAN:
-			this.x = a;
-			this.y = b;
-			break;
+		this.x = x;
+		this.y = y;
+	}
 
-		case POLAR:
-			x = a * Math.cos(b);
-			y = a * Math.sin(b);
-			break;
-		}
+	public static Point newCartesianPoint(double x, double y) {
+		return new Point(x, y);
+	}
 
+	public static Point newPolarPoint(double rho, double theta) {
+		return new Point((rho * Math.cos(theta)), (rho * Math.sin(theta)));
 	}
 
 }
@@ -38,7 +27,9 @@ public class Main {
 	 * creation of objects
 	 */
 	public static void main(String[] args) {
-
+		
+		Point point = Point.newPolarPoint(2, 3);
+		
 	}
 
 }
