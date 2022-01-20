@@ -1,20 +1,32 @@
 package com.keytech;
 
+//solution for the constructors
+enum CoordinateSystem {
+	CARTESIAN, POLAR
+}
+
 class Point {
 
 	private double x, y;
 
-	//Takes values x and y
-	public Point(double x, double y) {
+	/*
+	 * @param a is x if cartesian and rho if polar 
+	 * @param b
+	 * */
+	public Point(double a, double b, CoordinateSystem cs) {
 		super();
-		this.x = x;
-		this.y = y;
-	}
+		switch (cs) {
+		case CARTESIAN:
+			this.x = a;
+			this.y = b;
+			break;
 
-	//Takes values x and y from polar co ordinates
-	public Point(double rho, double theta) {
-		x = rho * Math.cos(theta);
-		y = rho * Math.sin(theta);
+		case POLAR:
+			x = a * Math.cos(b);
+			y = a * Math.sin(b);
+			break;
+		}
+
 	}
 
 }
