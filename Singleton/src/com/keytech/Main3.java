@@ -9,11 +9,29 @@ class LazySingleton {
 	}
 
 	//Using synchronized for thread safety
-	public static synchronized LazySingleton getInstance() {
+//	public static synchronized LazySingleton getInstance() {
+//
+//		if (instance == null) {
+//			
+//			instance = new LazySingleton();
+//		}
+//
+//		return instance;
+//	}
+	
+	//Using double-check locking(Out dated!!)
+	public static LazySingleton getInstance() {
 
 		if (instance == null) {
 			
-			instance = new LazySingleton();
+			synchronized (LazySingleton.class) {
+				
+				if (instance == null) {
+
+					instance = new LazySingleton();
+				}
+				
+			}
 		}
 
 		return instance;
