@@ -48,6 +48,16 @@ class VectorRectangle extends VectorObject {
 	}
 }
 
+class LineToPointAdapter extends ArrayList<Point>{
+	
+	public LineToPointAdapter(Line line) {
+		/*
+		 * Create an adapter that converts Lines to Points since we dont have that convertion
+		 * This is then what you will use to draw the poits for the lines
+		 * */
+	}
+}
+
 public class Main {
 
 	/*
