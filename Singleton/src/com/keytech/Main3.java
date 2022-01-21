@@ -8,7 +8,8 @@ class LazySingleton {
 		System.out.println("Initializing a lazy singleton");
 	}
 
-	public static LazySingleton getInstance() {
+	//Using synchronized for thread safety
+	public static synchronized LazySingleton getInstance() {
 
 		if (instance == null) {
 			
