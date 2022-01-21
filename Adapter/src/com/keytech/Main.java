@@ -53,7 +53,9 @@ class LineToPointAdapter extends ArrayList<Point>{
 	public LineToPointAdapter(Line line) {
 		/*
 		 * Create an adapter that converts Lines to Points since we dont have that convertion
-		 * This is then what you will use to draw the poits for the lines
+		 * This is then what you will use to draw the poits for the lines.
+		 * 
+		 * If the adapter generates temporary extra objects. To avoid this you build a cache!
 		 * */
 	}
 }
