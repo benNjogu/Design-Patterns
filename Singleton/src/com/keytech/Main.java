@@ -31,9 +31,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		BasicSingleton singleton = BasicSingleton.getInstance();
-		singleton.setValue(23);
-		System.out.println(singleton.getValue());
+		/*
+		 * The two problems with singleton
+		 * 1. Reflection
+		 * 2. Serialization
+		 * */
 		
 	}
 
